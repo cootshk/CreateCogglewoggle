@@ -5,13 +5,14 @@
   "name": "Create: Coggle",
   "description": "coggle",
   "authors": [
-    "MrSterner!"
+    "MrSterner!",
+    "Cootshk"
   ],
   "contact": {
     "sources": "https://github.com/Fabricators-of-Create/create-fabric-addon-template"
   },
   "license": "CC0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/coggle/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
