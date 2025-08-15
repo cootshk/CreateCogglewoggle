@@ -1,12 +1,12 @@
 plugins {
-	id "fabric-loom" version "1.5.+"
+	id "fabric-loom" version "1.8.+"
 	id "io.github.p03w.machete" version "1.+" // automatic jar compressing on build
 	id "maven-publish"
 	id "org.jetbrains.kotlin.jvm" version "2.0.0"
 }
 
-sourceCompatibility = JavaVersion.VERSION_17
-targetCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = JavaVersion.VERSION_21
+targetCompatibility = JavaVersion.VERSION_21
 
 archivesBaseName = project.archives_base_name
 group = project.maven_group
@@ -26,6 +26,7 @@ repositories {
 	maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
 	maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
 	maven { url = "https://maven.tterrag.com/" } // Flywheel
+	maven { url = "https://modmaven.dev/" }
 }
 
 configurations.configureEach {
@@ -38,8 +39,8 @@ dependencies {
 	// Setup
 	minecraft("com.mojang:minecraft:${minecraft_version}")
 	mappings(loom.layered {
-		it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
 		it.officialMojangMappings { nameSyntheticMembers = false }
+		it.parchment("org.parchmentmc.data:parchment-${minecraft_version}:${parchment_version}@zip")
 	})
 	modImplementation("net.fabricmc:fabric-loader:${fabric_loader_version}")
 
